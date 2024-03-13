@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Full Page iframe</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="myIframe"></iframe>
+
+  <script>
+    // Get the URL parameter value
+    function getUrlParam(name) {
+      var url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+
+    // Get the "param" URL parameter value
+    var paramValue = getUrlParam('param');
+
+    // Decode the URL-encoded parameter value
+    var decodedParamValue = decodeURIComponent(paramValue);
+
+    // Set the iframe source based on the decoded "param" value
+    var iframe = document.getElementById('myIframe');
+    iframe.src = decodedParamValue;
+  </script>
+</body>
+</html>
+
