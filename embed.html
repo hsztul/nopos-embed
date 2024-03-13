@@ -18,7 +18,7 @@
   </style>
 </head>
 <body>
-  <iframe id="myIframe"></iframe>
+  <iframe id="myIframe" allow="fullscreen"></iframe>
 
   <script>
     // Get the URL parameter value
@@ -33,9 +33,10 @@
     // Decode the URL-encoded parameter value
     var decodedParamValue = decodeURIComponent(paramValue);
 
-    // Set the iframe source based on the decoded "param" value
+    // Set the iframe source and allow fullscreen mode
     var iframe = document.getElementById('myIframe');
     iframe.src = decodedParamValue;
+    iframe.setAttribute('allowfullscreen', 'true');
   </script>
 </body>
 </html>
